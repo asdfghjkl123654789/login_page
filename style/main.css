@@ -1,0 +1,225 @@
+/*
+>>>> media <<<<
+
+// X-Large devices
+@media (max-width: 1399px){
+
+// Large devices
+@media (max-width: 1199px){
+
+// Medium devices 
+@media (max-width: 991px){
+
+// Small devices
+@media (max-width: 767px){
+
+// X-Small devices
+@media (max-width: 575px){
+
+ */
+
+
+/* start general */
+:root{
+  --main-color:#01233f;
+  --second-color:#36abf1;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  background-image: url(../images/pexels-sanni-sahil-2585916.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: monospace;
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+li{
+  list-style: none;
+}
+
+.container {
+  width: 1190px;
+}
+
+@media (max-width: 1199px){
+  .container {
+    width: 980px;
+  }
+}
+@media (max-width: 991px){
+  .container {
+    width: 760px;
+  }
+}
+@media (max-width: 767px){
+  .container {
+    width: calc(100% - 10px);
+  }
+}
+/* end general */
+/* start nav */
+nav{
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-color);
+  height: 75px;
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 767px){
+  nav{
+    height: 100px;
+  }
+  nav .container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 13px;
+  }
+}
+nav h1{
+  color: white;
+  font-size: 40px;
+  margin: 0;}
+
+
+nav .rightSide{
+  display: flex;
+align-content: center;
+gap: 25px;
+color: white;
+}
+nav .rightSide ul{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 15px;
+}
+nav .rightSide li a{
+  transition-duration: 0.3s;
+  font-weight: 500;
+  position: relative;
+}
+nav .rightSide li a::after{
+  position: absolute;
+  content: "";
+  top: calc(100% + 3px);
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--second-color);
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+}
+nav .rightSide li a::before{
+  position: absolute;
+  content: "";
+  top: calc(100% + 3px);
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+nav .rightSide li a:hover:after{
+  width: 100%;
+  transition-delay: 0.2s;
+}
+nav .rightSide li a:hover:before{
+  width: 100%;
+  transition-delay: 0s;
+}
+nav .rightSide li a:hover,
+nav .rightSide li a.active{
+  color: var(--second-color);
+}
+nav .rightSide .search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .rightSide .search label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  order: 1;
+  transition-duration: 0.5s;
+}
+nav .rightSide .search input{
+  padding: 5px 0px;
+  border: none;
+  order: 2;
+  width: 0;
+  transition-duration: 0.5s;
+}
+nav .rightSide .search input:focus{
+  outline: none;
+  width: 150px;
+  padding: 5px 10px;
+}
+nav .rightSide .search input:focus + label{
+  background-color: white;
+  color: var(--main-color);
+}
+nav .rightSide .persona{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-left:20px;
+  border-left: solid 1px white;
+}
+nav .rightSide .persona  .active{
+  position: relative;
+}
+nav .rightSide .persona .active::before{
+  position: absolute;
+  content: "";
+  background-color: var(--second-color);
+width: 7px;
+height: 7px;
+top: -5px;
+right: -5px;  border-radius: 50%;
+}
+nav .rightSide .persona .profile{
+  background-color: white;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .rightSide .persona .profile i{
+  color: var(--main-color);
+}
+/* end nav */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

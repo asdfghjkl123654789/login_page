@@ -1,0 +1,117 @@
+/* start general */
+:root{
+  --main-color:#01233f;
+  --second-color:#36abf1;
+}
+*{
+  box-sizing: border-box;
+}
+/* end general */
+
+
+
+main{
+  height: calc(100vh - 75px);
+  display: flex;
+  justify-content: center;
+}
+main .container{
+  position: relative;
+  height: 100%;
+}
+
+form{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0009;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 320px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@media (max-width: 767px){
+  form{
+    right: 50%;
+    transform: translate(50% , -50%);
+  }
+}
+form input{
+  border: none;
+  padding: 5px 10px;
+  width: 100%;
+  color: #777;
+}
+form input:focus{
+  outline: none;
+}
+
+form div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+form a{
+  color: var(--second-color);
+  transition-duration: 0.3s;
+}
+form a:hover{
+  color: white;
+}
+[type="submit"]{
+  background-color: var(--second-color);
+color: white;
+
+}
+form p {
+  margin-top: 70px;
+}
+
+[type="checkbox"]{
+  display: none;
+}
+[type="checkbox"] + label{
+  padding-left: 25px;
+  position: relative;
+}
+[type="checkbox"] + label::before{
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  border: 2px #999 solid;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+}
+[type="checkbox"] + input:checked + label::before{
+  border-color:  var(--second-color) ;
+}
+[type="checkbox"] + label::after{
+  content: "\f00c";
+  font-family: fontAwesome;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  border-radius: 3px;
+  background-color: var(--second-color);
+  color: white;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%) rotate(180deg)scale(0);
+  transition-duration: 0.5s;
+}
+[type="checkbox"]:checked + label::after{
+  transform: translateY(-50%) rotate(0)scale(1);
+}
